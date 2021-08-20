@@ -79,15 +79,6 @@ Load and add key abd values to ETCD node.
 
 ````
 func main(){
-	client, err := etcdReplicator.NewReplicator(etcdReplicator.Client{
-		Endpoints:   []string{},
-		Username:    "",
-		Password:    "",
-		DialTimeout: 2,
-	})
-	if err != nil{
-		log.Error(err)
-	}
     err = client.LoadAndReplicate("data.csv", etcdReplicator.Client{
 			Endpoints:   []string{"127.0.0.21:2379"},
 			Username:"",
